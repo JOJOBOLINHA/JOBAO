@@ -8,13 +8,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://via.placeholder.com/80x50?text=LOGO" alt="Logo do Site">
+                </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -22,13 +27,13 @@
             <h1>Mãos que alimentam, pontes que aproximam</h1>
         </section>
 
-        <section class="hero-image">
+        <section id="inicio" class="hero-image">
             <div class="drawing-container">
                 <img src="https://via.placeholder.com/600x300?text=Desenho+ilustrativo+aqui" alt="Desenho ilustrativo de campo e cidade">
                 </div>
         </section>
 
-        <section class="content-sections">
+        <section id="sobre" class="content-sections">
             <div class="section-card">
                 <h2>* Plantação</h2>
                 <p>O primeiro processo é a plantação, feita pelo agricultor. Pode ser tanto braçal quanto automatizado.</p>
@@ -43,6 +48,29 @@
                 <h2>* Mesa das pessoas</h2>
                 <p>Após todos esses processos, o terceiro e último passo é quando chegam à mesa das pessoas, onde todo o trabalho dos agricultores é desfrutado na comida que chega em sua mesa.</p>
             </div>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <h2>Contato</h2>
+            <p>Se você tem alguma dúvida, sugestão ou gostaria de mais informações, entre em contato conosco.</p>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            <p>Você também pode nos encontrar em:</p>
+            <p>Email: contato@seusite.com</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
         </section>
     </main>
 

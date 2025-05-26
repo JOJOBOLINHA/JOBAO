@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth; /* Suaviza a rolagem para as âncoras */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -11,9 +15,25 @@ body {
 header {
     background-color: #4CAF50; /* Green similar to nature/food */
     color: white;
-    padding: 1em 0;
+    padding: 1em 20px; /* Adiciona padding horizontal */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center; /* Centraliza o conteúdo do cabeçalho */
+    position: sticky; /* Torna o cabeçalho fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+.header-content {
+    display: flex; /* Ativa o flexbox */
+    justify-content: space-between; /* Coloca espaço entre a logo e a navegação */
+    align-items: center; /* Alinha verticalmente no centro */
+    max-width: 1200px; /* Limita a largura do conteúdo do cabeçalho */
+    margin: 0 auto; /* Centraliza o conteúdo do cabeçalho */
+}
+
+.logo img {
+    height: 50px; /* Altura da logo */
+    width: auto; /* Mantém a proporção */
+    display: block; /* Remove espaço extra abaixo da imagem */
 }
 
 header nav ul {
@@ -21,11 +41,10 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex; /* Para alinhar os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens do menu */
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin-left: 25px; /* Espaço entre os itens do menu, puxando para a direita */
 }
 
 header nav ul li a {
@@ -69,6 +88,8 @@ main {
 .hero-image {
     text-align: center;
     margin-bottom: 40px;
+    padding-top: 70px; /* Adiciona padding para compensar o cabeçalho fixo */
+    margin-top: -70px; /* Compensa o padding acima para a rolagem da âncora */
 }
 
 .drawing-container {
@@ -91,6 +112,8 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    padding-top: 70px; /* Adiciona padding para compensar o cabeçalho fixo */
+    margin-top: -70px; /* Compensa o padding acima para a rolagem da âncora */
 }
 
 .section-card {
@@ -119,6 +142,76 @@ main {
     color: #555;
 }
 
+/* Nova seção de Contato */
+.contact-section {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding-top: 70px; /* Adiciona padding para compensar o cabeçalho fixo */
+    margin-top: -70px; /* Compensa o padding acima para a rolagem da âncora */
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: #388E3C;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact-section button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button[type="submit"]:hover {
+    background-color: #388E3C;
+}
+
+
 footer {
     text-align: center;
     padding: 20px;
@@ -142,11 +235,31 @@ footer {
         margin: 0 10px;
     }
 
-    header nav ul {
-        flex-direction: column; /* Empilha os itens do menu em telas menores */
+    .header-content {
+        flex-direction: column; /* Empilha a logo e o menu em telas menores */
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Espaço entre a logo e o menu empilhado */
     }
 
     header nav ul li {
-        margin: 5px 0;
+        margin: 0 10px; /* Ajusta margem para itens de menu em telas menores */
     }
 }
+
+@media (max-width: 480px) {
+    header nav ul {
+        flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
+        justify-content: center;
+    }
+    header nav ul li {
+        margin: 5px 8px; /* Ajusta ainda mais em telas muito pequenas */
+    }
+
+    .contact-section {
+        padding: 20px; /* Menor padding em telas pequenas */
+    }
+}
+
