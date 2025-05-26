@@ -31,7 +31,7 @@ header {
 }
 
 .logo img {
-    height: 80px; /* Altura da logo */
+    height: 100px; /* Altura da logo */
     width: auto; /* Mantém a proporção */
     display: block; /* Remove espaço extra abaixo da imagem */
 }
